@@ -17,3 +17,4 @@ Route::get('/', function () {
     $nama="carissa";
     return view('welcome');
 });
+Route::resource('/pesan',\App\Http\Controllers\PesanController::class);
