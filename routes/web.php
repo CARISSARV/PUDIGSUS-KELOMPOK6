@@ -18,3 +18,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::resource('/pesan',\App\Http\Controllers\PesanController::class);
+Route::resource('/user',\App\Http\Controllers\UserController::class);
