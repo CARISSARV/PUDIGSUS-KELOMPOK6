@@ -17,5 +17,13 @@ Route::get('/', function () {
     $nama="carissa";
     return view('welcome');
 });
+Route::get('/admin', function () {
+    return view('admin.master_admin');
+});
+Route::get('/dashboard', function () {
+    return view('admin.dashboard');
+});
 Route::resource('/pesan',\App\Http\Controllers\PesanController::class);
 Route::resource('/user',\App\Http\Controllers\UserController::class);
+Route::resource('/Master',\App\Http\Controllers\MasterController::class);
+
