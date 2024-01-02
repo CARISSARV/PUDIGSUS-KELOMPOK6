@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\controller_book;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,17 +15,29 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $nama="carissa";
-    return view('welcome');
-});
-Route::get('/admin', function () {
-    return view('admin.master_admin');
-});
+
 Route::get('/dashboard', function () {
     return view('admin.dashboard');
 });
+Route::get('/detail', function () {
+    return view('detail');
+});
 Route::resource('/pesan',\App\Http\Controllers\PesanController::class);
 Route::resource('/user',\App\Http\Controllers\UserController::class);
-Route::resource('/Master',\App\Http\Controllers\MasterController::class);
+Route::resource('/',\App\Http\Controllers\MasterController::class);
+Route::resource('/book',\App\Http\Controllers\controller_book::class);
+
+Route::get('/detail/{id}', [controller_book::class, 'show']);
+Route::get('/hapusBuku/{id}', [controller_book::class, 'destroy']);
+Route::get('/show_read/{id}', [controller_book::class, 'showRead']);
+
+Route::post('/postlogin', [AuthController::class, 'postlogin']);
+Route::get('/logout', [AuthController::class, 'logout']);
+Route::get('/portal', [AuthController::class, 'login']);
+
+
+
+
+
+
 

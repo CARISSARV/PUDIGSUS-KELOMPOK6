@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Pasar Buah 88</title>
+  <title>Perpustakaan Digital</title>
   @yield('css')
   <!-- plugins:css -->
   <link rel="stylesheet" href="{{asset('asset/vendors/feather/feather.css')}}">
@@ -41,10 +41,10 @@
           <li class="nav-item nav-profile dropdown">
             <span class="mr-2 d-none d-lg-inline text-gray-600">Admin</span>
             <a class="nav-link dropdown-toggle" href="/logout" data-toggle="dropdown" id="profileDropdown">
-              <img src="{{asset('asset/images/profil.png')}}" alt="profile"/>
+              <img src="{{asset('asset/gambar/user.png')}}" alt="profile"/>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-              <a class="dropdown-item" href="/logout">
+              <a class="dropdown-item" href="/portal">
                 <i class="ti-power-off text-primary"></i>
                 Logout
               </a>
@@ -64,6 +64,12 @@
             <a class="nav-link" href="{{url('dashboard')}}">
               <i class="icon-grid menu-icon"></i>
               <span class="menu-title">Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{url('book')}}">
+              <i class="icon-layout menu-icon"></i>
+              <span class="menu-title">Buku</span>
             </a>
           </li>
         </ul>

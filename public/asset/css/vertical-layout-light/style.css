@@ -8645,27 +8645,27 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 :root {
-  --blue: #46c35f;
-  --indigo: #46c35f;
-  --purple: #46c35f;
+  --blue: #00a8ff;
+  --indigo: #00a8ff;
+  --purple: #00a8ff;
   --pink: #E91E63;
   --red: #f96868;
   --orange: #f2a654;
   --yellow: #f6e84e;
-  --green: #46c35f;
+  --green: #00a8ff;
   --teal: #58d8a3;
   --cyan: #57c7d4;
   --white: #ffffff;
   --gray: #6c757d;
   --gray-dark: #0f1531;
-  --blue: #46c35f;
-  --indigo: #46c35f;
-  --purple: #46c35f;
+  --blue: #00a8ff;
+  --indigo: #00a8ff;
+  --purple: #00a8ff;
   --pink: #E91E63;
   --red: #f96868;
   --orange: #f2a654;
   --yellow: #f6e84e;
-  --green: #46c35f;
+  --green: #00a8ff;
   --teal: #58d8a3;
   --cyan: #57c7d4;
   --white: #ffffff;
@@ -8674,7 +8674,7 @@
   --gray-lighter: #e8eff4;
   --gray-lightest: #e6e9ed;
   --black: #000000;
-  --primary: #46c35f;
+  --primary: #00a8ff;
   --secondary: #a3a4a5;
   --success: #57B657;
   --info: #248AFD;
@@ -11089,29 +11089,29 @@ fieldset:disabled .wizard > .actions a,
 
 .btn-primary:hover, .wizard > .actions a:hover {
   color: #fff;
-  background-color: #46c35f;
-  border-color: #46c35f;
+  background-color: #00a8ff;
+  border-color: #00a8ff;
 }
 
 .btn-primary:focus, .wizard > .actions a:focus, .btn-primary.focus, .wizard > .actions a.focus {
   color: #fff;
-  background-color: #46c35f;
-  border-color: #46c35f;
-  box-shadow: 0 0 0 0.2rem #46c35f;
+  background-color: #00a8ff;
+  border-color: #00a8ff;
+  box-shadow: 0 0 0 0.2rem #00a8ff;
 }
 
 .btn-primary.disabled, .wizard > .actions a.disabled, .btn-primary:disabled, .wizard > .actions a:disabled {
   color: #fff;
-  background-color: #46c35f;
-  border-color: #46c35f;
+  background-color: #00a8ff;
+  border-color: #00a8ff;
 }
 
 .btn-primary:not(:disabled):not(.disabled):active, .wizard > .actions a:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .wizard > .actions a:not(:disabled):not(.disabled).active,
 .show > .btn-primary.dropdown-toggle,
 .wizard > .actions .show > a.dropdown-toggle {
   color: #fff;
-  background-color: #46c35f;
-  border-color: #46c35f;
+  background-color: #00a8ff;
+  border-color: #00a8ff;
 }
 
 .btn-primary:not(:disabled):not(.disabled):active:focus, .wizard > .actions a:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus, .wizard > .actions a:not(:disabled):not(.disabled).active:focus,
@@ -22367,7 +22367,7 @@ code {
   width: 18px;
   height: 18px;
   border-radius: 2px;
-  border: solid #46c35f;
+  border: solid #00a8ff;
   border-width: 2px;
   -webkit-transition: all;
   -moz-transition: all;
@@ -22402,7 +22402,7 @@ code {
 }
 
 .form-check .form-check-label input[type="checkbox"]:checked + .input-helper:before {
-  background: #46c35f;
+  background: #00a8ff;
   border-width: 0;
 }
 
@@ -28622,7 +28622,7 @@ div.tagsinput span.tag a {
 }
 
 .sidebar .nav:not(.sub-menu) > .nav-item:hover > .nav-link, .sidebar .nav:not(.sub-menu) > .nav-item:hover[aria-expanded="true"] {
-  background: #46c35f;
+  background: #00a8ff;
   color: #fff;
 }
 

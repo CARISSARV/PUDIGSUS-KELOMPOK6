@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\book;
 use Illuminate\Support\Facades\DB;
 
-class MasterController extends Controller
+class controller_book extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +15,8 @@ class MasterController extends Controller
      */
     public function index()
     {
-       
         $data=book::all();
-        return view('master',compact('data'));
-        //
+        return view('admin.book',compact('data'));
     }
 
     /**
@@ -28,7 +26,6 @@ class MasterController extends Controller
      */
     public function create()
     {
-        return view('pesan.create');
         //
     }
 
@@ -41,15 +38,27 @@ class MasterController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'id_pesan',
-            'tanggal_pengiriman',   
-            'id_user' 
+            'audio' => 'required|mimes:mp3',
+            'cover' => 'required|image|mimes:jpg,png',
+            'file' => 'required|mimes:pdf',
         ]);
-            DB::insert("INSERT INTO `pesan` (`id_pesan`, `tanggal_pengiriman`, `id_user`) VALUES (?, ?, ?)",
-            [$request->id_pesan, $request->tanggal_pengiriman, $request->id_user]);
-            return redirect()->route('pesan.index')->with(['success' => 'Data Berhasil Disimpan!']);
+
+        $audioPath = $request->file('audio')->store('audio', 'public');
+        $coverPath = $request->file('cover')->store('covers', 'public');
+        $filePath = $request->file('file')->store('files', 'public');
+
+        $book = book::create([
+            'judul' => $request->judul,
+            'pengarang' => $request->pengarang,
+            'tahun_terbit' => $request->tahun_terbit,
+            'deskripsi' => $request->deskripsi,
+            'jenis' => $request->jenis,
+            'audio' => $audioPath,
+            'cover' => $coverPath,
+            'file' => $filePath,
+        ]);
+        return redirect()->route('book.index')->with('success','Buku Berhasil Disimpan');
     }
-    
 
     /**
      * Display the specified resource.
@@ -59,7 +68,16 @@ class MasterController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = book::where('id', $id)->get(); 
+
+        return view('detail',compact('data'));
+    }
+
+    public function showRead($id)
+    {
+        $data = book::where('id', $id)->get(); 
+
+        return view('admin.show',compact('data'));
     }
 
     /**
@@ -70,8 +88,6 @@ class MasterController extends Controller
      */
     public function edit($id)
     {
-        $data = DB::table('pesan')->where('id_pesan', $id)->first();
-        return view('pesan.edit', compact('data'));
         //
     }
 
@@ -83,24 +99,9 @@ class MasterController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-{
-    $this->validate($request, [
-        'id_pesan' => 'required',
-        'tanggal_pengiriman' => 'required',
-        'id_user' => 'required',
-    ]);
-
-    DB::table('pesan')->where('id_pesan', $id)->update([
-        'id_pesan' => $request->pesan,
-        'tanggal_pengiriman' => $request->tanggal_pengiriman,
-        'id_user' => $request->id_user,
-    ]);
-
-    return redirect()->route('pesan.index')->with(['success' => 'Data Berhasil Diupdate!']);
-}
-
-        
+    {
         //
+    }
 
     /**
      * Remove the specified resource from storage.
@@ -110,8 +111,7 @@ class MasterController extends Controller
      */
     public function destroy($id)
     {
-        DB::table('pesan')->where('id_pesan', $id)->delete();
-        return redirect()->route('pesan.index')->with(['success' => 'Data berhasil dihapus!']);
-        //
+        book::destroy($id);
+        return redirect('/book');
     }
 }

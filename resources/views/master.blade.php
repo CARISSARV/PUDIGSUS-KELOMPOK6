@@ -117,7 +117,7 @@
               <div class="icon"><i class="bx bxl-dribbble"></i></div>
               <h4 class="title"><a href="">Penelitian Ilmu Komputer</a></h4>
               <p class="description">
-Ilmu komputer adalah bidang studi yang mempelajari dasar-dasar teoritis tentang informasi, komputasi, dan pengolahan data.</p>
+              Ilmu komputer adalah bidang studi yang mempelajari dasar-dasar teoritis tentang informasi, komputasi, dan pengolahan data.</p>
             </div>
           </div>
 
@@ -273,110 +273,29 @@ Ilmu komputer adalah bidang studi yang mempelajari dasar-dasar teoritis tentang 
           <h2>Buku Digital</h2>
           <p>"Dunia pengetahuan tak mengenal batas. Aplikasi buku digital dirancang untuk menjembatani kesenjangan aksesibilitas dan memberikan setiap orang, termasuk mereka yang berkebutuhan khusus, kesempatan untuk merasakan keajaiban literasi..</p>
         </div>
-
+  
         <div class="row">
           <div class="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-flters">
               <li data-filter="*" class="filter-active">Semua</li>
-              <li data-filter=".filter-app">Pendidikan</li>
-              <li data-filter=".filter-card">Fiksi</li>
-              <li data-filter=".filter-web">Non Fiksi</li>
+              <li data-filter=".pendidikan">Pendidikan</li>
+              <li data-filter=".fiksi">Fiksi</li>
+              <li data-filter=".nonfiksi">Non Fiksi</li>
             </ul>
           </div>
         </div>
 
+        @foreach($data as $row)
         <div class="row portfolio-container">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <img src="assets/img/portfolio/Buku pendidikan2.jpg" class="img-fluid" alt="">
+          <div class="col-lg-4 col-md-6 portfolio-item {{ $row->jenis }}">
+            <img src="{{ asset('storage/' . $row->cover) }}" class="img-fluid" alt="..">
             <div class="portfolio-info">
-              <h4>"Terampil Berbahasa Indonesia"</h4>
-              <p>Buku Bahasa Indonesia adalah sebuah sumber belajar yang dirancang untuk memperkenalkan dan mengembangkan pemahaman tentang bahasa Indonesia.</p>
-              <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <h4>{{ $row->judul }}</h4>
+              <p>{{ $row->deskripsi }}</p>
+              <a href="{{ url('/detail/' . $row->id) }}" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <img src="assets/img/portfolio/Non fiksi3.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>"Analisis Tes Tertulis"</h4>
-              <p>Strategi, metode, dan kerangka kerja untuk menganalisis tes tertulis atau karya tulis. Ini bisa termasuk analisis terhadap esai, laporan, atau jenis tulisan lainnya yang dievaluasi dalam konteks pendidikan atau penilaian.</p>
-              <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <img src="assets/img/portfolio/Buku pendidikan3.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>"Metode Penelitian Pendidikan"</h4>
-              <p>Metode Penelitian Pendidikan" merupakan panduan komprehensif yang dirancang untuk membimbing pembaca melalui langkah-langkah esensial dalam merancang dan melaksanakan penelitian di bidang pendidikan</p>
-              <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <img src="assets/img/portfolio/Fiksi1.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>"Mariposa"</h4>
-              <p>Mariposa merupakan karya sastra yang dikenal sebagai novel karya penulis Andrea Hirata. Novel ini menggambarkan kisah perjalanan hidup seorang anak desa bernama Ikal dan teman-temannya di Belitong, Indonesia. </p>
-              <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <img src="assets/img/portfolio/Non fiksi1.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>"Teknologi Daur Ulang"</h4>
-              <p>Buku ini menyajikan berbagai teknologi inovatif yang digunakan dalam daur ulang berbagai jenis bahan, mulai dari kertas dan plastik hingga logam dan elektronik. </p>
-              <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <img src="assets/img/portfolio/Buku pendidikan4.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>"Komunikasi Dan Kajian Media"</h4>
-              <p> Komunikasi dan Kajian Media,merupakan karya yang menggambarkan secara komprehensif bidang studi komunikasi dan media.</p>
-              <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <img src="assets/img/portfolio/Fiksi2.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>"Harry Potter"</h4>
-              <p>Harry Potter, yang masing-masing mengikuti petualangan seorang anak penyihir bernama Harry Potter dan teman-temannya di sekolah sihir Hogwarts.</p>
-              <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <img src="assets/img/portfolio/Fiksi3.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>"The Queen of Nothing"</h4>
-              <p>The Queen of Nothing adalah novel terakhir dari trilogi "The Folk of the Air" yang ditulis oleh Holly Black. Novel ini melanjutkan kisah protagonist, Jude Duarte, yang berada di tengah-tengah intrik politik dan dunia peri yang penuh intrik dan kekuatan sihir.</p>
-              <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <img src="assets/img/portfolio/Non fiksi2.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>"Trafsir Praksis"</h4>
-              <p>Penjelasan atau interpretasi dengan aplikasi praktis dalam kehidupan sehari-hari. Buku semacam ini mungkin membahas bagaimana ajaran atau pemahaman suatu konsep agama atau filsafat dapat diterapkan dalam praktek kehidupan sehari-hari.</p>
-              <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
+          @endforeach
         </div>
 
       </div>
