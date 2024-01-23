@@ -48,7 +48,7 @@
         <i class="bi bi-phone-fill phone-icon"></i> (0761) 52248 | (0761) 53108
       </div>
       <div class="cta d-none d-md-block">
-        <a href="#about" class="scrollto">Log In</a>
+       
       </div>
     </div>
   </div>
@@ -159,52 +159,12 @@
           <p>Perpustakaan Universitas Lancang Kuning berdiri pada tahun 1983, satu tahun setelah Unilak didirikan dengan nama Perpustakaan Pusat. Pendirian tersebut berdasarkan Surat Keputusan Ketua Yayasan Raja Ali Haji Nomor: 010.H/SK-YASRAH/1983 tentang Pembentukan Perpustakaan Pusat Universitas Lancang Kuning. Pada awal berdirinya, Perpustakaan Pusat berlokasi di salah satu ruangan di Gedung Rektorat (sekarang ruang Biro Akademis). Pada tahun 1990, Perpustakaan Pusat Unilak memiliki gedung sendiri (lokasi sekarang). Selajutnya pada tahun 2002, dikeluarkanlah SK Ketua Yayasan Raja Ali Haji No. 374/YASRAH.B/III/2002, tentang Penetapan Statuta Universitas Lancang Kuning. Berdasarkan statuta tersebut, kemudian Perpustakaan Pusat mengalami perubahan nama menjadi UPT. Perpustakaan Universitas Lancang Kuning..</p>
         </div>
 
-        <div class="row content">
-          <div class="col-lg-6">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
-            </p>
-            <ul>
-              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
-              <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
-              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
-            </ul>
-          </div>
-          <div class="col-lg-6 pt-4 pt-lg-0">
-            <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-            <a href="#" class="btn-learn-more">Learn More</a>
-          </div>
-        </div>
+
 
       </div>
     </section><!-- End About Us Section -->
 
-    <!-- ======= Clients Section ======= -->
-    <section id="clients" class="clients">
-      <div class="container" data-aos="zoom-in">
-
-        <div class="clients-slider swiper">
-          <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><img src="assets/img/clients/logo unilak1.jpg" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/logo unilak1.jpg" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/logo unilak1.jpg" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/logo unilak1.jpg" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/logo unilak1.jpg" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/logo unilak1.jpg" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/logo unilak1.jpg" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/logo unilak1.jpg" class="img-fluid" alt=""></div>
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-      </div>
-    </section><!-- End Clients Section -->
-
+  
     <!-- ======= Why Us Section ======= -->
     <section id="why-us" class="why-us">
       <div class="container-fluid">
@@ -311,74 +271,25 @@
         </div>
 
         <div class="row">
-
+        @foreach($data2 as $row2)
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/img/team/team-1.jpg" class="img-fluid" alt=""></div>
+              <div class="pic"> <img src="{{ asset('storage/' . $row2->foto) }}"  alt=".." class="img-fluid"></div>
               <div class="member-info">
-                <h4>Farhan Mubarak</h4>
-                <span>D4 Sistem informasi</span>
-                <p>Relawan dari program studi Sistem Informasi</p>
+                <h4>{{ $row2->nama}}</h4>
+                <span>{{ $row2->generasi}}</span>
+                <p>Relawan dari program studi {{ $row2->program_studi}}</p>
                 <div class="social">
                   <a href=""><i class="ri-twitter-fill"></i></a>
                   <a href=""><i class="ri-facebook-fill"></i></a>
-                  <a href=""><i class="ri-instagram-fill"></i></a>
+                  <a href="https://www.instagram.com/farhanmubarak_/"><i class="ri-instagram-fill"></i></a>
                   <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-6 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="200">
-            <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/img/team/team-2.jpg" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Miftahul Jannah</h4>
-                <span>S1 Kebidanan</span>
-                <p>Relawan dari program Studi Kebidanan</p>
-                <div class="social">
-                  <a href=""><i class="ri-twitter-fill"></i></a>
-                  <a href=""><i class="ri-facebook-fill"></i></a>
-                  <a href=""><i class="ri-instagram-fill"></i></a>
-                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6 mt-4" data-aos="fade-up" data-aos-delay="300">
-            <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/img/team/team-3.jpg" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Rio Rahmadani</h4>
-                <span>S1 Teknik Sipil</span>
-                <p>Relawan dari program studi Teknik Sipil</p>
-                <div class="social">
-                  <a href=""><i class="ri-twitter-fill"></i></a>
-                  <a href=""><i class="ri-facebook-fill"></i></a>
-                  <a href=""><i class="ri-instagram-fill"></i></a>
-                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6 mt-4" data-aos="fade-up" data-aos-delay="400">
-            <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/img/team/team-4.jpg" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Mutifa Salsabilla </h4>
-                <span>S1 Manajemen</span>
-                <p>Relawan dari program studi Manajemen</p>
-                <div class="social">
-                  <a href=""><i class="ri-twitter-fill"></i></a>
-                  <a href=""><i class="ri-facebook-fill"></i></a>
-                  <a href=""><i class="ri-instagram-fill"></i></a>
-                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                </div>
-              </div>
-            </div>
-          </div>
+          @endforeach
 
         </div>
 
@@ -461,13 +372,11 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-6">
-            <h4>Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+            <h4>Unilak's Newsletter</h4>
+            <p>Subscribe for our newsletter</p>
           </div>
           <div class="col-lg-6">
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
+          <a href="https://youtu.be/YZq_XO4ubTE" class="btn btn-white py-md-3 py-3 px-md-5 px-4">Subscribe now!</a>
           </div>
         </div>
       </div>
@@ -478,48 +387,46 @@
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Useful Links</h4>
+            <h4>Fakultas</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://fasilkom.unilak.ac.id/">Fakultas Ilmu Komputer</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://fh.unilak.ac.id/">Fakultas Hukum</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://fahutan.unilak.ac.id/">Fakultas Pertanian</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://faperta.unilak.ac.id/">Fakultas Ilmu administrasi</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://fadiksi.unilak.ac.id/">Fakultas Pendidikan dan Vokasi</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
+            <h4>Link Terkait</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://www.kemdikbud.go.id/">Kemendikbud</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://www.kemdikbud.go.id/">LLDIKTI Wilayah X</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://www.banpt.or.id/">BAN PT</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="http://sister.ristekdikti.go.id/auth/login">Sister Ristek Dikti</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://pak.lldikti10.id/">PAK LLDIKTI Wilayah</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h4>Contact Us</h4>
+            <h4>Hubungi Kami</h4>
             <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br><br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
+              Alamat : <br>
+              Jalan Yos Sudarso KM 8 <br>
+              Rumbai, Pekanbaru<br><br>
+              <strong>Telfon:</strong> (0761) 52248 / (0761) 53108<br>
+              <strong>Email:</strong> info@unilak.ac.id<br>
             </p>
 
           </div>
 
           <div class="col-lg-3 col-md-6 footer-info">
-            <h3>About Anyar</h3>
-            <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+            <h3>Tentang Unilak</h3>
+            <a href="https://pmb.unilak.ac.id/login" class="btn-custom order-lg-last"> <span><img src="https://unilak.ac.id/asset/ui/informasi beasiswa-01.png" width="15%"> </span>Login PMB </a>
+            <p>Universitas Lancang Kuning atau yang biasa disingkat sebagai Unilak adalah salah satu perguruan tinggi yang berada di Pekanbaru, Provinsi Riau, Indonesia. Universitas ini didirikan oleh Yayasan Raja Ali pada tanggal 9 Juni 1982 berdasarkan Surat Keputusan Yayasan Raja Ali Haji No. 001/KEP-Yasrah/ 82.</p>
             <div class="social-links mt-3">
-              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              <a href="https://www.facebook.com/infounilak/?locale=id_ID" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="https://www.instagram.com/infounilak/?hl=id" class="instagram"><i class="bx bxl-instagram"></i></a>
             </div>
           </div>
 
@@ -529,7 +436,7 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>Anyar</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>Universitas Lancang Kuning</span></strong>
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->

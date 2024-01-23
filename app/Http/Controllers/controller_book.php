@@ -88,7 +88,8 @@ class controller_book extends Controller
      */
     public function edit($id)
     {
-        //
+        $data=DB::table('book')->where('id_book', $id)->first();
+        return view('book.edit', compact('data'));
     }
 
     /**
@@ -100,9 +101,43 @@ class controller_book extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-    }
+        {
+            $this->validate($request, [
+                'judul'  =>'required',
+                'pengarang'=>'required',
+                'tahun_terbit'=>'required',
+                'deskripsi'=>'required',
+                'jenis' =>'required',
+                'audio'=>'required',
+                'cover'=>'required',
+                'file' =>'required'
 
+                 ]);
+                {
+                    DB::UPDATE("UPDATE Book SET
+                    judul = ?,
+                    pengarang = ?,
+                    tahun_terbit= ?,
+                    deskripsi= ?,
+                    jenis= ?,
+                    audio= ?,
+                    cover= ?,
+                    file= ?
+                    WHERE id_relawan = ?",[
+                        $request->judul,
+                        $request->pengarang,
+                        $request->tahun_terbit,
+                        $request->deskripsi,
+                        $request->jenis,
+                        $request->audio,
+                        $request->cover,
+                        $id
+                        ]
+                    );
+                    }
+                    return redirect()->route('book.index')->with(['success'=>'Data Berhasil Diupdate!']);
+            }
+        }
     /**
      * Remove the specified resource from storage.
      *

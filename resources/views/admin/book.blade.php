@@ -54,6 +54,7 @@
                                     <td>{{ $row->jenis }}</td>
                                     <td>@method('DELETE')
                                     <a href="{{ url('/hapusBuku') . '/' . $row->id }}"  class="btn btn-danger btn-rounded btn-sm">DELETE</a>
+                                    <a href="{{ url('/editRelawan') . '/' . $row->id }}"  class="btn btn-warning btn-rounded btn-sm">EDIT</a>
                                     </td>
                                 </tr>
                                 @endforeach

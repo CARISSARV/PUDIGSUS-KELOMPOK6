@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\book;
+use App\Models\relawan;
 use Illuminate\Support\Facades\DB;
 
 class MasterController extends Controller
@@ -17,7 +18,8 @@ class MasterController extends Controller
     {
        
         $data=book::all();
-        return view('master',compact('data'));
+        $data2=relawan::all();
+        return view('master',compact('data','data2'));
         //
     }
 

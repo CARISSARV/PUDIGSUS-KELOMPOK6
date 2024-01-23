@@ -72,6 +72,12 @@
               <span class="menu-title">Buku</span>
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{url('relawan')}}">
+              <i class="icon-layout menu-icon"></i>
+              <span class="menu-title">Relawan</span>
+            </a>
+          </li>
         </ul>
       </nav>
       <!-- partial -->
